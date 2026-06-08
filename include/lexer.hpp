@@ -9,8 +9,8 @@ enum class tokenType {
     L_PAREN, R_PAREN, COMMA, SEMICOLON, L_BRACE, R_BRACE, COLON, //punctuations
     PLUS, MINUS, STAR, SLASH, //math operators
     EQUAL, NOT_EQUAL, LESS, GREATER, LESS_EQUAL, GREATER_EQUAL, EQUAL_EQUAL, //comparison and assignment
-    IDENTIFIER, NUM, BOOL, //identifiers and literals
-    ECHO, READ, IF, ELSE, ERE, TRUTH, LIE, LET, //keywords
+    IDENTIFIER, NUM_LITERAL, //identifiers and literals
+    ECHO, READ, IF, ELSE, ERE, TRUTH, LIE, LET,BOOL,NUM_TYPE, //keywords
     END_OF_FILE //EOF
 };
 

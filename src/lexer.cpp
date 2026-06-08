@@ -10,7 +10,7 @@ std::map<std::string, tokenType> Lexer::keywords = {
     {"truth", tokenType::TRUTH},
     {"lie", tokenType::LIE},
     {"bool", tokenType::BOOL},
-    {"num", tokenType::NUM}
+    {"num", tokenType::NUM_TYPE}
 };
 
 Lexer::Lexer(const std::string&source) : source(source) {}
@@ -80,7 +80,7 @@ void Lexer::identifier() {
 
 void Lexer::number() {
     while (isdigit(peek())) advance();
-    addToken(tokenType::NUM, source.substr(start, current - start));
+    addToken(tokenType::NUM_LITERAL, source.substr(start, current - start));
 }
 
 bool Lexer::match(char expected) {
