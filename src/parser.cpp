@@ -34,10 +34,34 @@ std::unique_ptr<Stmt> Parser::varDeclaration() {
 }
 
 std::unique_ptr<Stmt> Parser::statement() {
+    if (match({tokenType::IF})) return ifStatement();
+    if (match({tokenType::READ})) return readStatement();
     if (match({tokenType::ERE})) return whileStatement();
     if (match({tokenType::ECHO})) return printStatement();
     if (match({tokenType::L_BRACE})) return std::make_unique<BlockStmt>(block());
     return expressionStatement();
+}
+
+std::unique_ptr<Stmt> Parser::ifStatement() {
+    consume(tokenType::L_PAREN, "Expected '(' after 'if'.");
+    std::unique_ptr<Expr> condition = expression();
+    consume(tokenType::R_PAREN, "Expected ')' after if condition.");
+
+    std::unique_ptr<Stmt> thenBranch = statement();
+    std::unique_ptr<Stmt> elseBranch = nullptr;
+    
+    // check for else block
+    if (match({tokenType::ELSE})) {
+        elseBranch = statement();
+    }
+
+    return std::make_unique<IfStmt>(std::move(condition), std::move(thenBranch), std::move(elseBranch));
+}
+
+std::unique_ptr<Stmt> Parser::readStatement() {
+    token name = consume(tokenType::IDENTIFIER, "Expected variable target name for read statement input.");
+    consume(tokenType::SEMICOLON, "Expected ';' after read destination identifier.");
+    return std::make_unique<ReadStmt>(name);
 }
 
 std::unique_ptr<Stmt> Parser::whileStatement() {

@@ -16,6 +16,9 @@
     <ClCompile Include="D:\Games\cvm\src\vm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Games\cvm\src\chunk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Games\cvm\CMakeLists.txt" />

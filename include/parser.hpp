@@ -49,6 +49,21 @@ public:
     virtual ~Stmt() = default;
 };
 
+class IfStmt : public Stmt {
+public:
+    std::unique_ptr<Expr> condition;
+    std::unique_ptr<Stmt> thenBranch;
+    std::unique_ptr<Stmt> elseBranch; // Can be nullptr if there is no else block
+    IfStmt(std::unique_ptr<Expr> condition, std::unique_ptr<Stmt> thenBranch, std::unique_ptr<Stmt> elseBranch)
+        : condition(std::move(condition)), thenBranch(std::move(thenBranch)), elseBranch(std::move(elseBranch)) {}
+};
+
+class ReadStmt : public Stmt {
+public:
+    token name;
+    ReadStmt(token name) : name(name) {}
+};
+
 class ExpressionStmt : public Stmt {
 public:
     std::unique_ptr<Expr> expression;
@@ -102,6 +117,8 @@ private:
     std::unique_ptr<Stmt> declaration();
     std::unique_ptr<Stmt> varDeclaration();
     std::unique_ptr<Stmt> statement();
+    std::unique_ptr<Stmt> ifStatement();
+    std::unique_ptr<Stmt> readStatement();
     std::unique_ptr<Stmt> printStatement();
     std::unique_ptr<Stmt> whileStatement();
     std::vector<std::unique_ptr<Stmt>> block();

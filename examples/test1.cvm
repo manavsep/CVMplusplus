@@ -1,5 +1,5 @@
 let x: num = 10;
 ere (x > 5) {
-    echo truth;
     x = x - 1;
+    echo x;
 }

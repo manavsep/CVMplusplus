@@ -1,0 +1,37 @@
+let num1: num = 0;
+let num2: num = 0;
+let operationCode: num = 0;
+let running: num = 1;
+
+ere (running == 1) {
+    read num1;
+
+    read num2;
+
+    read operationCode;
+
+    if (operationCode == 0) {
+        running = 0;
+    } else {
+
+        if (operationCode == 111) {
+            echo num1 + num2;
+        }
+        
+        if (operationCode == 222) {
+            echo num1 - num2;
+        }
+        
+        if (operationCode == 333) {
+            echo num1 * num2;
+        }
+        
+        if (operationCode == 444) {
+            if (num2 == 0) {
+                echo 99999; 
+            } else {
+                echo num1 / num2;
+            }
+        }
+    }
+}

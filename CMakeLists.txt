@@ -14,6 +14,7 @@ set(SOURCES
     src/parser.cpp
     src/compiler.cpp
     src/vm.cpp
+    src/chunk.cpp
 )
 
 add_executable(cvm_run ${SOURCES})

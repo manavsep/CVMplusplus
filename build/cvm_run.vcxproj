@@ -377,6 +377,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Games\cvm\src\parser.cpp" />
     <ClCompile Include="D:\Games\cvm\src\compiler.cpp" />
     <ClCompile Include="D:\Games\cvm\src\vm.cpp" />
+    <ClCompile Include="D:\Games\cvm\src\chunk.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
