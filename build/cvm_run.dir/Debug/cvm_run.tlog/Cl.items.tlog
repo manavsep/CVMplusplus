@@ -1,6 +1,0 @@
-D:\Games\cvm\src\main.cpp;D:\Games\cvm\build\cvm_run.dir\Debug\main.obj
-D:\Games\cvm\src\lexer.cpp;D:\Games\cvm\build\cvm_run.dir\Debug\lexer.obj
-D:\Games\cvm\src\parser.cpp;D:\Games\cvm\build\cvm_run.dir\Debug\parser.obj
-D:\Games\cvm\src\compiler.cpp;D:\Games\cvm\build\cvm_run.dir\Debug\compiler.obj
-D:\Games\cvm\src\vm.cpp;D:\Games\cvm\build\cvm_run.dir\Debug\vm.obj
-D:\Games\cvm\src\chunk.cpp;D:\Games\cvm\build\cvm_run.dir\Debug\chunk.obj
